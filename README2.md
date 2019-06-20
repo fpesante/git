@@ -15,3 +15,21 @@
     git config --user.name
 
     **Change 
+      cd .. #change directory
+      cd
+      cd Paco #change directory
+      cd Documents
+      ls #list of documents inside it
+      Dir #same as above
+
+      mkdir #make new directory
+      ls
+
+      touch paco.csv #create a new csv file
+
+      Atom paco.csv #open it with Atom
+
+      rm paco.csv #delete file
+      ls
+
+      rmdir test #remove directory
