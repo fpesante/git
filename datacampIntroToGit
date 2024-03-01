@@ -1,0 +1,53 @@
+#INTRODUCTION TO GIT
+##INTRODUCTION TO GIT > Introduction to version control with Git
+##Useful shell commands
+
+pwd	#print working directory
+
+ls #all files in directory
+
+##Changing directory
+cd archive #cd followed by the directory we want to move
+
+##Editing a file
+nano finance.csv #preview and modify files. Nano followed by a file name. Used to delete, add or change the content of a file. Save ctrl + 0; exit the editor ctrl + X
+echo "Review for duplicate records" > todo.txt
+
+echo "Review for duplicate records" >> todo.txt #append content
+
+##Checking Git version
+git --version
+
+## Saving files
+
+##INTRODUCTION TO GIT > Saving files
+##Parts of the project: Files and directories; repositories
+##Staging and commiting
+##Saving a draft: staging area
+##Save files/update the repo: Commit changes
+ls -a #show hidden files
+nano report.md #to open a text editor report file	#save ctrl + 0; ctrl + X
+
+##adding a sigle file
+git add report.md #followed by the file name
+git add . #adding all modified files
+
+##Making a commiting
+git commit -m "Updating TODO list in report.md" #to add log message, for reference; should be short and concise
+
+##Check the status of files
+git status
+
+##QUIZ##
+##Wher does Git store information /home/repl/mh_survey/data
+/home/repl/mh_survey/.git
+
+#Modify
+echo
+nano filename
+#Draft
+git add filename
+git add .
+#Save
+git commit -m
+#######
