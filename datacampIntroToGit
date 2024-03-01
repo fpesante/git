@@ -26,22 +26,26 @@ git --version
 ##Saving a draft: staging area
 ##Save files/update the repo: Commit changes
 ls -a #show hidden files
-nano report.md #to open a text editor report file	#save ctrl + 0; ctrl + X
+na"49,M,No,Yes,Never,Yes,Yes,No"no report.md #to open a text editor report file	#save ctrl + 0; ctrl + X
 
 ##adding a sigle file
 git add report.md #followed by the file name
 git add . #adding all modified files
 
-##Making a commiting
+##Making a commit
 git commit -m "Updating TODO list in report.md" #to add log message, for reference; should be short and concise
 
 ##Check the status of files
-git status
+git status  #to know which files have or not changes and are in the staging area.
 
-##QUIZ##
-##Wher does Git store information /home/repl/mh_survey/data
+################# EXERCISE  #######################
+## WHERE DOES GIT STORE INFORMATION ##
+# Your home directory /home/repl contains a repo called mh_survey, which has a directory called data.
+
+# Where is information about the history of the files in /home/repl/mh_survey/data stored?
 /home/repl/mh_survey/.git
 
+## THE GIT WORKFLOW ##
 #Modify
 echo
 nano filename
@@ -51,3 +55,20 @@ git add .
 #Save
 git commit -m
 #######
+# Git project analyzing the mental health of employees working at tech companies.## 
+## ADDING A FILE #
+# For the remainder of the course, you will be working on a Git project analyzing the mental health of employees working at tech companies.
+# In this exercise, you will complete a version control workflow to modify the mental_health_survey.csv file.
+# You are located in mh_survey/data, which contains the csv file you need to edit.
+
+## INSTRUCTIONS #
+# 1. Add a new row of data at the end of mental_health_survey.csv containing: "49,M,No,Yes,Never,Yes,Yes,No"
+echo "49,M,No,Yes,Never,Yes,Yes,No" >> mental_health_survey.csv
+# 2. Place the updated file in the staging area.
+git add mental_health_survey.csv
+# 3. Commit the modified file with the log message "Adding one new participant's data"
+git commit -m  "Adding one new participant's data"
+
+## ADDING MULTIPLE FILES
+
+##########################################
