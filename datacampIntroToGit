@@ -89,12 +89,18 @@ git commit -m "Added 3 participants and a new section in report"
 ## I.C. INTRODUCTION TO GIT > COMPARING FILES ##
 # Comparing a single file
 nano report.md
-      #Mental health is Tech Survey
+      #Mental health in Tech Survey                  #adding task to complete
       TODO: write executive summary.
       TODO: include link to raw data.
       TODO: add refrences.
       TODO: add summary statistics.
 # Updating the file
-git add.  #to add the report to the staging area
+git add .  #to add the report to the staging area
 git commit -m "Adding task for references and summary statistics in report.md # commit our changes
-git diff report.md
+git diff report.md      #comparing and unstaged file with the last commit
+# @@ -1,5 +1,5 @@      #report line changes: 1 lines removed from line 5; 1 lines added to line 5
+# lines with - symbol: removed line
+# lines with + symblo: added line
+
+# Comparing a staged file with the last commit
+git add report.md
