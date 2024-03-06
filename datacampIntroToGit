@@ -104,3 +104,11 @@ git diff report.md      #comparing and unstaged file with the last commit
 
 # Comparing a staged file with the last commit
 git add report.md
+git diff -r HEAD report.md # to look for a particular edition in the file
+
+# Comparing multiple staged files with the last commit
+
+cd data #to switch into the data directory
+nano mh_tech_survey.csv # to modify csv to add an extra participant's survey responses
+git add mh_tech_survey.csv # add the file to the staging area.
+git diff -r HEAD #to look at all files in the staging area
