@@ -107,8 +107,20 @@ git add report.md
 git diff -r HEAD report.md # to look for a particular edition in the file
 
 # Comparing multiple staged files with the last commit
-
 cd data #to switch into the data directory
 nano mh_tech_survey.csv # to modify csv to add an extra participant's survey responses
 git add mh_tech_survey.csv # add the file to the staging area.
 git diff -r HEAD #to look at all files in the staging area
+
+#####################################################
+## II.A. MAKING CHANGES > STORING DATA WITH GIT ##
+# The commit structure
+## Git stores data through commits, which have three parts:
+### The commit itself: contains metadata such as the author, commit message, and time of the commit. 
+### The tree: tracks the names and locations in the repo when that commit happened. 
+### The blob: short for binary large object. A blob may contain data of any kind. Blobs contain a compressed snapshot of the contents of the file when the commit happened.
+
+git log # We can view commit information w this command, which will display all commits made to the repo in chronological order, starting with the oldest. It will show the commit hash, author, date, and commit message. 
+git show ###### # displays the log entry for that commit at the top, followed by a diff output showing changes between the file in that commit and the current version in the repo.
+
+## II.B. MAKING CHANGES >
