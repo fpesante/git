@@ -110,7 +110,7 @@ git diff -r HEAD report.md # to look for a particular edition in the file
 cd data #to switch into the data directory
 nano mh_tech_survey.csv # to modify csv to add an extra participant's survey responses
 git add mh_tech_survey.csv # add the file to the staging area.
-git diff -r HEAD #to look at all files in the staging area
+git diff -r HEAD # to look at all files in the staging area
 
 #####################################################
 ## II.A. MAKING CHANGES > STORING DATA WITH GIT ##
@@ -121,6 +121,29 @@ git diff -r HEAD #to look at all files in the staging area
 ### The blob: short for binary large object. A blob may contain data of any kind. Blobs contain a compressed snapshot of the contents of the file when the commit happened.
 
 git log # We can view commit information w this command, which will display all commits made to the repo in chronological order, starting with the oldest. It will show the commit hash, author, date, and commit message. 
-git show ###### # displays the log entry for that commit at the top, followed by a diff output showing changes between the file in that commit and the current version in the repo.
+git show 35f4b4d # displays the log entry for that commit at the top, followed by a diff output showing changes between the file in that commit and the current version in the repo.
 
-## II.B. MAKING CHANGES >
+## II.B. MAKING CHANGES > VIEWING CHANGES ##
+git diff -r HEAD~1 # the second most recent commit
+git diff -r HEAD~2 # the commit before 1
+
+git show HEAD~3 # to look at the fourth most recent commit
+
+git diff 35f4b4d 186398f # to see changes between 2 commits numbering its git hashes
+git diff HEAD~3 HEAD~2 # another way to do the same
+
+# Changes per document by line
+git annotate report.md  # identifying the author in case of collective works
+
+## II.B. MAKING CHANGES > UNDOING CHANGES BEFORE COMMITTING ##
+git reset HEAD summary_statistics.csv # to unstage a sigle file
+nano summary_statistics.csv # to update a file
+git add summary_statistics.csv # to stage it again
+git commit -m "Adding age summary statistics" # making a commit to that file only, including a message
+git reset HEAD # to unstage all file to the repo
+git checkout -- summary_statistics.csv # undo changes to a file in the repository
+git checkout . # undo changes to all unstages files in our repo. Period stands for the current directory
+
+git add . # to save the repo in this state we then need to add all files to the staging area
+git commit -m "Restore repo to previous commit" # make a commit.
+
