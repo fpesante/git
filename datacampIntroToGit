@@ -147,3 +147,16 @@ git checkout . # undo changes to all unstages files in our repo. Period stands f
 git add . # to save the repo in this state we then need to add all files to the staging area
 git commit -m "Restore repo to previous commit" # make a commit.
 
+## II.C. MAKING CHANGES > RESTORING AND REVERTING
+# We'll look at how to customize our log commands as our projects scale, restore files to previous versions from particular commits, and delete all files that are not being tracked by Git.
+# Customizing the log output
+git log -3 # restrict the number of commits to 3 most recent 
+git log -3 report.md # to only look at the commit history of one file
+git log --since='Month Day Year' # restrict by date 
+git log --since='Apr 2 2022'
+git log --since='Apr 2 2022' --until='Apr 11 2022' # search a range
+git checkout dc9d8fac mental_health_survey.csv # restore or revert a version from a specific commit
+git checkout HEAD~1 mental_health_survey.csv # another way to do it, being the second commit
+git checkout dc9d8fac # restore a repo to a previous state
+git clean -n # to list all untracked files
+git clean -f # delete those files. Cannot be undone
