@@ -160,3 +160,31 @@ git checkout HEAD~1 mental_health_survey.csv # another way to do it, being the s
 git checkout dc9d8fac # restore a repo to a previous state
 git clean -n # to list all untracked files
 git clean -f # delete those files. Cannot be undone
+
+## III.A. GIT WORKFLOWS > CONFIGURING GIT
+# Git has a range of customizable settings that can simplify our version control tasks, improving productivity!
+# Each level overrides the one above it,
+git config --list # levels of settings
+git config --local # settings for one specific project
+git config --global # for all of our projects
+git config --system # for every user on this computer
+
+git config --global setting value # To modify a global setting
+git config --global user.email johnsmith@datacamp.com # change email address
+git config --global user.name 'John Smith' # change user name
+
+# Using alias
+git config --global alias.ci 'commit -m' # shortnen command for commiting files
+git ci # instead of "git commit --m"
+
+# Create a custom alias
+# for any commands, for example, wen unstaging files
+git config --global alias.unstage 'reset HEAD'
+# Careful not to overwrite existing commands!
+
+#Tracking aliases
+git config --global --list ##
+
+# Ignoring specific files
+nano .gitignore
+*.log      # with a wildcard
