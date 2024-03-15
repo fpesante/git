@@ -178,7 +178,7 @@ git config --global alias.ci 'commit -m' # shortnen command for commiting files
 git ci # instead of "git commit --m"
 
 # Create a custom alias
-# for any commands, for example, wen unstaging files
+# for any commands, for example, when unstaging files
 git config --global alias.unstage 'reset HEAD'
 # Careful not to overwrite existing commands!
 
@@ -188,3 +188,10 @@ git config --global --list ##
 # Ignoring specific files
 nano .gitignore
 *.log      # with a wildcard
+
+## EXCERCISES
+git config --global --list # Check the global settings to see if the update has been made.
+git config --global alias.st 'status' # Create an alias for the global command used to check the state of files, calling it st.
+git st
+
+## III.B. GIT WORKFLOWS > BRANCHES
