@@ -26,7 +26,7 @@ git --version
 ##Saving a draft: staging area
 ##Save files/update the repo: Commit changes
 ls -a #show hidden files
-na"49,M,No,Yes,Never,Yes,Yes,No"no report.md #to open a text editor report file	#save ctrl + 0; ctrl + X
+nano "49,M,No,Yes,Never,Yes,Yes,No" report.md #to open a text editor report file	#save ctrl + 0; ctrl + X
 
 ##adding a sigle file
 git add report.md #followed by the file name
@@ -195,3 +195,61 @@ git config --global alias.st 'status' # Create an alias for the global command u
 git st
 
 ## III.B. GIT WORKFLOWS > BRANCHES
+# Branches enable us to have multiple versions of our work and track each version systematically. 
+# Merging branches: When we merge two branches, the commits are called parent commits. One branch is known as the **source**, the branch we want to merge from, and the other is known as the **destination**, the branch we want to merge into. .
+
+git branch # identifying branches. An asterisk next to it,  is how Git tells us we are currently in this branch.
+git checkout -b report # We can create a new branch called report
+git diff main summary-statistics # difference between branches
+
+#EXERCISE
+# Creating new branches
+# You have some more content to add to summary_statistics.csv for the mh_survey project, and then you'll be moving on to the report phase. Therefore, you would like to make a new branch called report where you can work on the project report.
+# The branch needs to be created from the summary-statistics branch, in which you are currently located.
+# Your task is to finish working on the summary statistics file, make a commit, then create the report branch.
+
+# Instructions 
+# Edit summary_statistics.txt and add the following text: "Mean age is 32 years old, with a standard deviation of 6.72"
+echo "Mean age is 32 years old, with a standard deviation of 6.72" >> summary_statistics.txt
+# Add summary_statistics.txt to the staging area.
+git add summary_statistics.txt
+# Make a commit with the log message "Adding age summary statistics".
+git commit -m "Adding age summary statistics"
+# Create a new branch called report
+git checkout -b report
+
+# Comparing branches
+# If you're working across multiple branches then you may want to compare the state of repos between branches from time to time.
+# You are in the mh_survey repository and would like to compare two branches.
+# Execute a command to compare the alter-report-title and summary-statistics branches.
+git diff alter-report-title summary-statistics
+
+## III.C. GIT WORKFLOWS > WORKING WHITH BRANCHES
+git checkout -b new_branch # create a new branch
+git checkout debugging # switch between branches (to the new one)
+git brach # to confirm
+git merge source destination # merging branches
+git merge summary-statistics main # example
+
+# Exercise
+# Switching branches
+# You have previously created a new branch called report.
+# Now it's time to switch into this new branch and edit report.md with some of your findings.
+
+# Instructions 
+# Switch to the report branch.
+git checkout report
+# Add "80% of participants were male, compared to the industry average of 67%." to the end of report.md.
+echo "80% of participants were male, compared to the industry average of 67%." >> report.md
+# Place report.md into the staging area.
+git add report.md
+# Make a commit with the log message "Add gender summary in report".
+git commit -m "Add gender summary in report"
+
+# Merging two branches
+# You've updated the project report in the report branch, and now need to merge it into main to keep it accurate and up to date.
+# Instructions
+# Merge the report branch into the main branch.
+git merge report main
+
+## III.D. GIT WORKFLOWS > HANDLING CONFLICT
