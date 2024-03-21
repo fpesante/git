@@ -253,3 +253,50 @@ git commit -m "Add gender summary in report"
 git merge report main
 
 ## III.D. GIT WORKFLOWS > HANDLING CONFLICT
+git merge update main # different versions in the main and update branches: CONFLICT(add/add): Merge conflict in todo.txt ...
+nano todo.txt # open the file in conflict
+#  <<<<<<<<< HEAD: file contents in the latest comment 
+#  ==============: center of the conflict
+# >>>>>>>> update: additional content
+# update or erase in the command prompt
+git add todo.txt # merging branches
+git commit -m "Resolving todo.txt conflict"
+git merge update main # updated with resolved conflict of the 2 branches
+# prevention is the best
+# each branch for a specific task
+# avoid editing a file in multiple branches
+
+# Exercise
+# Resolving a conflict
+# You've added a reminder to the report.md and then switched to the summary-statistics branch.
+# You remember that you need that extra task from the report in this branch too, so you decide to add it and make a commit.
+# You're now ready to merge summary-statistics into main but there is a conflict in report.md.
+# Looks like there was an error when adding the task into report.md in the summary-statistics branch.
+# You'll need to resolve any conflicts to merge the branches.
+
+# Instructions
+# Edit report.md, removing content from the summary_statistics branch along with any Git conflict syntax.
+nano report.md
+
+# Mental Health in Tech Survey
+TODO: write executive summary.
+TODO: include link to raw data.
+TODO: remember to cite funding sources!
+<<<<<<<< HEAD
+TODO: Add graphs.
+=======
+TODO: Add data visualizations.
+>>>>>>>> main
+
+# Mental Health in Tech Survey
+TODO: write executive summary.
+TODO: include link to raw data.
+TODO: remember to cite funding sources!
+TODO: Add data visualizations.
+
+## IV.A. COLLABORATING WITH GIT > CREATING REPOS
+
+
+
+## IV.B. COLLABORATING WITH GIT > WORKING WITH REMOTES
+
