@@ -295,8 +295,86 @@ TODO: remember to cite funding sources!
 TODO: Add data visualizations.
 
 ## IV.A. COLLABORATING WITH GIT > CREATING REPOS
+# Creating  new repos, and convert an existing project into a Git repo.
+# Benefits to creating a Git repo: 
+# + the ability to systematically track the versions of files, 
+# + to provide an easy way to collaborate with colleagues, 
+# + store everything so we can avoid losing our files
 
+# example: creating a new repo
+git init mental-health-workspace #mental-health-workspace -> name of the project
+cd mental-health-workspace # to change into this directory
+git status # check if the repo initialized correctly
 
+# convert an existing project into a repo
+git init # run the commnand from the project directory
+# avoid creating git repo inside another (nested repos) to avoid confusion
+
+# Exercise
+# *Setting up a new repo*
+# You have finished working on the mh_survey project, and just in time too! You've been assigned to work with a colleague on a new research project investigating the relationship between anxiety and the number of different computer systems used in a workplace.
+# You decide to get a head start by creating a new Git repo along with a to-do list.
+
+# Instructions 1/3
+# Create a Git repo called anxiety_workplace in your current directory.
+git init anxiety_workplace
+# Move into the new anxiety_workplace directory.
+cd anxiety_workplace
+# Create a file called todo.txt containing the following text: "TODO: Recap on existing research.".
+echo "TODO: Recap on existing research." > todo.txt
+
+# *Converting an existing project*
+# Imagine you've been working on the mental health survey project, but are only now learning about the benefits of Git!
+# You want to convert your project into a Git repo so you can track your files moving forward.
+# You're inside the mh_survey directory.
+
+# Instructions
+# Turn your project into a Git repo.
+git init mh_survey
 
 ## IV.B. COLLABORATING WITH GIT > WORKING WITH REMOTES
+# Example: GitHub, Bitbucket, Gitlab; regularly hosted in a local repo. Ideal for collective collaboration.
+# Cloning locally
+git clone path-to-project-directory # 
+git clone /home/john/repo new_repo
+
+# Cloning a remote
+git clone [URL]
+git remote # list the names of its remotes
+git remote -v #verbose 
+
+# Creating a remote
+# when cloning Git will name the remote: origin
+git remote add george https://github.com/george_datacamp/repo # git remote add name URL
+
+# Exercise
+# *Cloning a repo*
+# Your colleague has been working on the new anxiety in the workplace project and is ready to hand it over to you.
+# They tell you that all of their work is in a repo in /home/john/repo.
+# Use a single command to clone this repo inside your projects directory, where you are currently located, naming it as john_anxiety_project.
+
+# Instructions
+# Clone /home/john/repo, naming the cloned repo as john_anxiety_project.
+git clone /home/john/repo/ john_anxiety_project
+
+# *Defining and identifying remotes*
+# Now that you have cloned John's repo locally, you decide you want to name the remote as john to serve as a shortcut when working between branches going forward.
+
+# Instructions 1/2
+# Add the name john for the /home/john/repo repo.
+git remote add john /home/john/repo
+# List all remotes including their URL(s).
+git remote -v
+
+## IV.C. COLLABORATING WITH GIT > GATHERING FROM A REMOTE
+# how to get content from a remote into our local repo.
+
+
+
+
+
+## IV.D. COLLABORATING WITH GIT > PUSHING TO A REMOTE
+
+
+
 
