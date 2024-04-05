@@ -161,6 +161,7 @@ git checkout dc9d8fac # restore a repo to a previous state
 git clean -n # to list all untracked files
 git clean -f # delete those files. Cannot be undone
 
+#######################################################
 ## III.A. GIT WORKFLOWS > CONFIGURING GIT
 # Git has a range of customizable settings that can simplify our version control tasks, improving productivity!
 # Each level overrides the one above it,
@@ -194,6 +195,7 @@ git config --global --list # Check the global settings to see if the update has 
 git config --global alias.st 'status' # Create an alias for the global command used to check the state of files, calling it st.
 git st
 
+#######################################################
 ## III.B. GIT WORKFLOWS > BRANCHES
 # Branches enable us to have multiple versions of our work and track each version systematically. 
 # Merging branches: When we merge two branches, the commits are called parent commits. One branch is known as the **source**, the branch we want to merge from, and the other is known as the **destination**, the branch we want to merge into. .
@@ -224,6 +226,7 @@ git checkout -b report
 # Execute a command to compare the alter-report-title and summary-statistics branches.
 git diff alter-report-title summary-statistics
 
+#######################################################
 ## III.C. GIT WORKFLOWS > WORKING WHITH BRANCHES
 git checkout -b new_branch # create a new branch
 git checkout debugging # switch between branches (to the new one)
@@ -252,6 +255,7 @@ git commit -m "Add gender summary in report"
 # Merge the report branch into the main branch.
 git merge report main
 
+#######################################################
 ## III.D. GIT WORKFLOWS > HANDLING CONFLICT
 git merge update main # different versions in the main and update branches: CONFLICT(add/add): Merge conflict in todo.txt ...
 nano todo.txt # open the file in conflict
@@ -294,6 +298,7 @@ TODO: include link to raw data.
 TODO: remember to cite funding sources!
 TODO: Add data visualizations.
 
+#######################################################
 ## IV.A. COLLABORATING WITH GIT > CREATING REPOS
 # Creating  new repos, and convert an existing project into a Git repo.
 # Benefits to creating a Git repo: 
@@ -332,6 +337,7 @@ echo "TODO: Recap on existing research." > todo.txt
 # Turn your project into a Git repo.
 git init mh_survey
 
+#######################################################
 ## IV.B. COLLABORATING WITH GIT > WORKING WITH REMOTES
 # Example: GitHub, Bitbucket, Gitlab; regularly hosted in a local repo. Ideal for collective collaboration.
 # Cloning locally
@@ -365,14 +371,44 @@ git clone /home/john/repo/ john_anxiety_project
 git remote add john /home/john/repo
 # List all remotes including their URL(s).
 git remote -v
-
+#######################################################
 ## IV.C. COLLABORATING WITH GIT > GATHERING FROM A REMOTE
 # how to get content from a remote into our local repo.
 
+git fetch origin main # To compare the files in a remote against the contents of a local repo we first need to fetch versions from the remote. Name the remote and the local branch to fetch into.
+git fetch origin report # to fetch into a diff branch
+git merge origin main # synchronizing content; merge the remote into the local repo's main branch we are located
 
+git pull origin main # fetch and merge using a single command. We execute git pull followed by the remote repo's name and the local repo branch we are merging into. Here, we pull from origin into our local main branch.
+git pull origin # pulling unsaved local changes
 
+######## Exercise #########
+# *Fetching from a remote*
+# If you are not sure how the contents of a remote repo compare to your local repo, then you can gather the remote contents from a specific branch and then compare them to your local branch.
+# Your colleague John has set up a remote repo so that his work is backed up in the cloud and accessible to others.
 
+# Instructions 1/3
+# Run a command to find out the name(s) of remote repos linked to your project.
+git remote
+# Gather contents from the remote origin repo into your local main branch.
+git fetch orign main
+# Compare the remote repo with your local main branch.
+git diff origin main
 
+# *Pulling from a remote*
+# Fetching is useful, but if you want to bring your local repo's main branch in line with a remote repo, origin, this is possible with a single command!
+# In this exercise, you'll work on a file while synchronizing between local and remote repos.
+
+# Instructions 1/4
+# Use a single command to fetch and merge the origin repo into your local main branch.
+git pull origin main
+# Append "No existing mental health diagnosis." to the end of protocol.md.
+echo "No existing mental health diagnosis." >> protocol.md
+# Add protocol.md to the staging area.
+git add protocol.md
+# Make a commit with the log message "Updating eligibility criteria".
+git commit -m "Updating eligibility criteria"
+#######################################################
 ## IV.D. COLLABORATING WITH GIT > PUSHING TO A REMOTE
 
 
